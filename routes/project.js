@@ -4,15 +4,16 @@ var router = express.Router();
 // var userController = require('../controllers/UserController.js')
 
 router.get('/', function(req, res, next) {
-  // userController.get(req,res)
+  controller.get(req,res)
 });
 
 router.get('/search', function(req, res, next) {
-  // userController.search(req,res)
+  controller.search(req,res)
 });
 
 router.get('/:projectID', function(req, res, next) {
-  // userController.getUser(req,res)
+  controller.getProject(req,res)
 });
 
 module.exports = router;
+

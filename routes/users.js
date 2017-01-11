@@ -11,7 +11,18 @@ router.get('/search', function(req, res, next) {
   userController.search(req,res)
 });
 
-router.get('/:userId', function(req, res, next) {
+router.get('/login', function(req, res, next) {
+  userController.login(req,res)
+});
+router.post('/login', function(req, res, next) {
+  userController.login(req,res)
+});
+
+
+
+
+
+router.get('/:userID', function(req, res, next) {
   userController.getUser(req,res)
 });
 

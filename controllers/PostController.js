@@ -1,9 +1,9 @@
 const pug = require('pug')
 
-const memoModel = require('../models/MemoObject.js')
+const postModel = require('../models/PostObject.js')
 
 const index = pug.compileFile("./views/index.pug")
-const memoView = pug.compileFile("./views/memo.pug")
+const postView = pug.compileFile("./views/post.pug")
 
 module.exports.get = function (req,res) {
 	var html = index({})
@@ -14,6 +14,6 @@ module.exports.search = function (req,res) {
 	res.end()
 }
 
-module.exports.getMemo = function (req, res) {
+module.exports.getPost = function (req, res) {
 	res.end()
 }

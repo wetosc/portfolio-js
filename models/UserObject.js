@@ -2,10 +2,10 @@ const sql = require("../sqlHelper.js")()
 
 module.exports.login = function(email, password, callback) {
 
-	queryInfo = {"email": email, "password": password }
+	queryInfo = [email, password]
 	
-	sql.query("SELECT * FROM user where ?", queryInfo, function(err, rows, fields){
-		
+	sql.query("SELECT * FROM user WHERE email = ? AND password = ?", queryInfo, function(err, rows, fields){
+		console.log("login: ", queryInfo)
 		if (err || rows.length < 1) {  callback(null)  } else {
 		
 			callback( fromSQL(rows[0]) )
@@ -19,14 +19,10 @@ module.exports.withID = function(id, callback) {
 	queryInfo = { "id": id }
 	
 	sql.query("SELECT * FROM user where ?", queryInfo, function(err, rows, fields){
-		
+		console.log("user:",id)
 		if (err || rows.length < 1) {  callback(null)  } else {
 			
-			var arr = Array()
-			for (const line of rows) {
-				arr.push(fromSQL(line))
-			}
-			callback( arr )
+			callback( fromSQL(rows[0]) )
 		}
 	})
 }

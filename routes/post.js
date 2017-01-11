@@ -1,18 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-// var userController = require('../controllers/UserController.js')
+var controller = require('../controllers/PostController.js')
 
 router.get('/', function(req, res, next) {
-  // userController.get(req,res)
+  controller.get(req,res)
 });
 
 router.get('/search', function(req, res, next) {
-  // userController.search(req,res)
+  controller.search(req,res)
 });
 
 router.get('/:postID', function(req, res, next) {
-  // userController.getUser(req,res)
+  controller.getPost(req,res)
 });
 
 module.exports = router;
+

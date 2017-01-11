@@ -1,6 +1,14 @@
 extends layout
 
-block content 
-	form
-		label(for="email")
-		input(type="email")#email
+block content
+	if error
+		p #{error}
+	form(action="/users/login" method="post")
+		
+		label(for="email") Email
+		input(type="email" name="email")#email
+		br
+		label(for="password") Password
+		input(type="password" name="password")#password
+		br
+		input(type="submit" value="Login")

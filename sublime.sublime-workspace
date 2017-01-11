@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"se",
+				"session"
+			],
+			[
+				"query",
+				"queryInfo"
+			],
+			[
+				"login",
+				"loginView"
+			],
+			[
+				"user",
+				"userView"
+			],
+			[
+				"view",
+				"viewModel"
+			],
+			[
+				"USe",
+				"userObject"
+			],
+			[
 				"id",
 				"idEmployee"
 			],
@@ -32,16 +56,20 @@
 	"buffers":
 	[
 		{
+			"file": "controllers/UserController.js",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1277,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"file": "views/login.pug",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 296,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -80,29 +108,44 @@
 	[
 		"/home/eugenius/projects/portfolio_js/portfolio",
 		"/home/eugenius/projects/portfolio_js/portfolio/controllers",
-		"/home/eugenius/projects/portfolio_js/portfolio/routes",
+		"/home/eugenius/projects/portfolio_js/portfolio/models",
 		"/home/eugenius/projects/portfolio_js/portfolio/views"
 	],
 	"file_history":
 	[
-		"/home/eugenius/projects/portfolio_js/portfolio/views/searchResult.pug",
-		"/home/eugenius/projects/portfolio_js/portfolio/controllers/UserController.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/app.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/models/UserObject.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/views/login.pug",
+		"/home/eugenius/projects/portfolio_js/portfolio/routes/users.js",
 		"/home/eugenius/projects/portfolio_js/portfolio/views/index.pug",
-		"/home/eugenius/projects/portfolio_js/portfolio/views/layout.pug",
+		"/home/eugenius/projects/portfolio_js/portfolio/controllers/UserController.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/controllers/PostController.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/controllers/MemoController.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/controllers/ProjectController.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/routes/post.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/routes/project.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/routes/memo.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/models/ProjectObject.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/models/MemoObject.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/models/PostObject.js",
 		"/home/eugenius/projects/portfolio_js/portfolio/routes/index.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/routes/posts.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/views/memo.pug",
+		"/home/eugenius/projects/portfolio_js/portfolio/views/post.pug",
+		"/home/eugenius/projects/portfolio_js/portfolio/views/userView.pug",
+		"/home/eugenius/projects/portfolio_js/portfolio/views/project.pug",
+		"/home/eugenius/projects/portfolio_js/portfolio/views/searchResult.pug",
+		"/home/eugenius/projects/portfolio_js/portfolio/models/ProjectObject",
+		"/home/eugenius/projects/portfolio_js/portfolio/sqlHelper.js",
+		"/home/eugenius/projects/portfolio_js/portfolio/views/layout.pug",
 		"/home/eugenius/projects/portfolio_js/portfolio/controllers/LoginController.js",
 		"/home/eugenius/projects/portfolio_js/portfolio/sublime.sublime-project",
-		"/home/eugenius/projects/portfolio_js/portfolio/views/login.pug",
 		"/home/eugenius/projects/portfolio_js/portfolio/sqlHelper.sublime-workspace",
 		"/home/eugenius/Documents/univer/BDC/lab 5/lab5.sql",
-		"/home/eugenius/projects/portfolio_js/portfolio/routes/users.js",
 		"/home/eugenius/projects/portfolio_js/portfolio/views/user.pug",
 		"/home/eugenius/Documents/test/build/build/index.html",
 		"/home/eugenius/projects/portfolio_js/portfolio/views/base.pug",
-		"/home/eugenius/projects/portfolio_js/portfolio/app.js",
-		"/home/eugenius/projects/portfolio_js/portfolio/models/UserObject.js",
 		"/home/eugenius/projects/portfolio_js/portfolio/controllers/loginController.js",
-		"/home/eugenius/projects/portfolio_js/portfolio/sqlHelper.js",
 		"/home/eugenius/projects/portfolio_js/portfolio/mysql-config.json",
 		"/home/eugenius/projects/portfolio_js/portfolio/views/base.jade",
 		"/home/eugenius/Documents/univer/SOMIPP/lab somipp 3",
@@ -110,7 +153,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -124,6 +167,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"result"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -141,28 +185,59 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "controllers/UserController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1277,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								535,
+								535
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/login.pug",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								93,
+								93
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -170,40 +245,13 @@
 					},
 					"stack_index": 1,
 					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -240,7 +288,7 @@
 	"project": "sublime.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
