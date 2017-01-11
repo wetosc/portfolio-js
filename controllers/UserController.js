@@ -1,15 +1,24 @@
 const pug = require('pug')
+const userModel = require('../models/UserObject.js')
 
-const userView = pug.compileFile("./views/index.pug")
+const index = pug.compileFile("./views/index.pug")
 const searchView = pug.compileFile("./views/searchResult.pug")
+const userView = pug.compileFile("./views/userView.pug")
 
 module.exports.get = function (req,res) {
-	var html = userView({})
+	var html = index({})
 	res.send(html)
 }
 
 module.exports.search = function (req,res) {
-	var html = //searchView({searchResults: [{id: 8465, name: "wasea"}]})
-	searchView({})
+	var data = userModel.withName(req.params.name)
+	// var html = searchView({searchResults: [{id: 8465, name: "wasea"}]})
+	var html = searchView(data)
 	res.send(html)
 }
+
+module.exports.getUser = function (req, res) {
+	var html = userView({})
+	res.send(html)
+}
+

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 #{project.name}
+    p #{project.type}
+    p #{project.description}
+
+    p Authors:
+   		each user in authors
+   			a(href="/users/"+user.id) #{user.name}
+   			,

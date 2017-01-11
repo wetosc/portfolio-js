@@ -7,6 +7,6 @@ block content
         ul
             each user in searchResults
                 li 
-                    a(href="") #{user.id}. #{user.name}
+                    a(href="/users/"+user.id) #{user.id}. #{user.name}
     else
         h2 No results
