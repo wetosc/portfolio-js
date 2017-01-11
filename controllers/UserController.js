@@ -11,10 +11,14 @@ module.exports.get = function (req,res) {
 }
 
 module.exports.search = function (req,res) {
-	var data = userModel.withName(req.params.name)
-	// var html = searchView({searchResults: [{id: 8465, name: "wasea"}]})
-	var html = searchView(data)
-	res.send(html)
+	
+	userModel.withName(req.query.name, function(data) {
+			
+			var viewModel = {searchResults: data}
+			var html = searchView(viewModel)
+			// var html = searchView({searchResults: [{id: 8465, name: "wasea"}]})
+			res.send(html)
+	} )
 }
 
 module.exports.getUser = function (req, res) {

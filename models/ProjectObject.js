@@ -7,9 +7,9 @@ module.exports.withID = function(id, callback) {
 	
 	sql.query("SELECT * FROM project where ?", queryInfo, function(err, rows, fields){
 		
-		if (err || result.length < 1) {  callback(null)  } else {
+		if (err || rows.length < 1) {  callback(null)  } else {
 		
-			callback( fromSQL(result[0]) )
+			callback( fromSQL(rows[0]) )
 		
 		}
 	})
@@ -21,10 +21,10 @@ module.exports.projectsForUser = function(id, callback) {
 	
 	sql.query("SELECT * FROM project_user where ?", queryInfo, function(err, rows, fields){
 		
-		if (err || result.length < 1) {  callback(null)  } else {
+		if (err || rows.length < 1) {  callback(null)  } else {
 			var arr = Array()
-			for (const line of result) {
-				arr.append(fromSQL(line))
+			for (const line of rows) {
+				arr.push(fromSQL(line))
 			}
 			callback( arr )
 		}
@@ -37,10 +37,10 @@ module.exports.usersForProject = function(id, callback) {
 	
 	sql.query("SELECT * FROM project_user where ?", queryInfo, function(err, rows, fields){
 		
-		if (err || result.length < 1) {  callback(null)  } else {
+		if (err || rows.length < 1) {  callback(null)  } else {
 			var arr = Array()
-			for (const line of result) {
-				arr.append(userObject.fromSQL(line))
+			for (const line of rows) {
+				arr.push(userObject.fromSQL(line))
 			}
 			callback( arr )
 		}
@@ -48,10 +48,13 @@ module.exports.usersForProject = function(id, callback) {
 }
 
 
-module.exports.fromSQL = function(sqlObj) {
+module.exports.fromSQL = fromSQL
+
+function fromSQL(sqlObj) {
 	var result = { "id": sqlObj.id, "name": sqlObj.name, "type": sqlObj.type, "description": sqlObj.description }
 	return result
 }
+
 
 
 

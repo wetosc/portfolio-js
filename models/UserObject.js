@@ -6,9 +6,9 @@ module.exports.login = function(email, password, callback) {
 	
 	sql.query("SELECT * FROM user where ?", queryInfo, function(err, rows, fields){
 		
-		if (err || result.length < 1) {  callback(null)  } else {
+		if (err || rows.length < 1) {  callback(null)  } else {
 		
-			callback( fromSQL(result[0]) )
+			callback( fromSQL(rows[0]) )
 		
 		}
 	})
@@ -20,10 +20,13 @@ module.exports.withID = function(id, callback) {
 	
 	sql.query("SELECT * FROM user where ?", queryInfo, function(err, rows, fields){
 		
-		if (err || result.length < 1) {  callback(null)  } else {
-		
-			callback( fromSQL(result[0]) )
-		
+		if (err || rows.length < 1) {  callback(null)  } else {
+			
+			var arr = Array()
+			for (const line of rows) {
+				arr.push(fromSQL(line))
+			}
+			callback( arr )
 		}
 	})
 }
@@ -33,20 +36,24 @@ module.exports.withName = function(name, callback) {
 	queryInfo = { "name": name }
 	
 	sql.query("SELECT * FROM user where ?", queryInfo, function(err, rows, fields){
-		
-		if (err || result.length < 1) {  callback(null)  } else {
-		
-			callback( fromSQL(result[0]) )
-		
+
+		if (err || rows.length < 1) {  callback(null)  } else {
+			
+			var arr = Array()
+			for (const line of rows) {
+				arr.push(fromSQL(line))
+			}
+			callback( arr )
 		}
 	})
 }
 
-module.exports.fromSQL = function(sqlObj) {
+module.exports.fromSQL = fromSQL
+
+function fromSQL(sqlObj) {
 	var result = { "id": sqlObj.id, "email": sqlObj.email, "name": sqlObj.name }
 	return result
 }
-
 
 
 

@@ -6,20 +6,20 @@ module.exports.withID = function(id, callback) {
 	
 	sql.query("SELECT * FROM memo where ?", queryInfo, function(err, rows, fields){
 		
-		if (err || result.length < 1) {  callback(null)  } else {
+		if (err || rows.length < 1) {  callback(null)  } else {
 		
-			callback( fromSQL(result[0]) )
+			callback( fromSQL(rows[0]) )
 		
 		}
 	})
 }
 
-module.exports.fromSQL = function(sqlObj) {
+module.exports.fromSQL = fromSQL
+
+function fromSQL(sqlObj) {
 	var result = { "id": sqlObj.id, "author": sqlObj.author, "title": sqlObj.title, "body": sqlObj.body }
 	return result
 }
-
-
 
 
 /*  SQL 
