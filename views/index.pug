@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1 Main Page
+    form(action="/users/search" method="get")
+        input(type="text" name="name")#searchField
+        input(type="submit" value="Search User")
+    a(href="/login") Login

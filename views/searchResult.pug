@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Search Results
+    
+    if searchResults
+        ul
+            each user in searchResults
+                li 
+                    a(href="") #{user.id}. #{user.name}
+    else
+        h2 No results
