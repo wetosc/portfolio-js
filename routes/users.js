@@ -17,7 +17,9 @@ router.get('/login', function(req, res, next) {
 router.post('/login', function(req, res, next) {
   userController.login(req,res)
 });
-
+router.get('/logout', function(req, res, next) {
+  userController.logout(req,res)
+});
 
 
 

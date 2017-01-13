@@ -7,8 +7,7 @@ const userView = pug.compileFile("./views/userView.pug")
 const loginView = pug.compileFile("./views/login.pug")
 
 module.exports.get = function (req,res) {
-	var html = index({})
-	res.send(html)
+	res.redirect('/');
 }
 
 module.exports.search = function (req,res) {
@@ -54,3 +53,7 @@ module.exports.login = function (req, res) {
 	}
 }
 
+module.exports.logout = function (req, res) {
+	req.session.reset();
+	res.redirect('back');
+}

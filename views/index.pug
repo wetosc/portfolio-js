@@ -1,8 +1,15 @@
 extends layout
 
 block content
-    h1 Main Page
-    form(action="/users/search" method="get")
-        input(type="text" name="name")#searchField
-        input(type="submit" value="Search User")
-    a(href="/users/login") Login
+    div.row.valign-wrapper
+        div.col.s4.valign.center-align
+            h1 Main Page
+        div.center-align.col.s4.valign.center-align
+            form(action="/users/search" method="get")
+                input(type="text" name="name")#searchField
+                input(type="submit" value="Search User")
+        div.col.s4.valign.center-align
+            if loggedIn
+                a(href="/users/logout") Log Out
+            else
+                a(href="/users/login") Login
